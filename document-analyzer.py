@@ -83,8 +83,6 @@ def generate_term_idf_dict(terms_set, URL_termcountdict_dict):
 
 	return term_idf_dict
 
-def calculate_tf_idf(URL_list, )
-
 URL_list = ['https://www.araba.com', 'https://www.arabam.com', 'http://www.oyunskor.com/araba-oyunlari', 'https://www.sahibinden.com/kategori/otomobil', 'http://www.oyunkolu.com/araba-oyunlari/']
 
 # save count of each term for each URL
