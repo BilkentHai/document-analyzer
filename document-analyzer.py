@@ -101,6 +101,15 @@ for URL in URL_list:
 terms_set = generate_set_of_all_terms(URL_termcountdict_dict)
 term_idf_dict = generate_term_idf_dict(terms_set, URL_termcountdict_dict)
 
+term_tfidf_dict = {}
+for URL in URL_list:
+	for term in terms_set:
+		if term in URL_termcountdict_dict[URL]: # check if term exists in URL
+			if term in term_tfidf_dict:
+				term_tfidf_dict[term] += URL_termtfdict_dict[URL][term] * term_idf_dict[term]
+			else:
+				term_tfidf_dict[term] = URL_termtfdict_dict[URL][term] * term_idf_dict[term]
 
-
-
+mylist = sorted(term_tfidf_dict.values())
+mylist = set(mylist)
+print mylist
